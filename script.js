@@ -63,6 +63,6 @@ guessHandler: function(id, guess) {
     }
 },
 displayProgress:function(){
-    var currentQuestionNumber
+    var currentQuestionNumber = 
 }
 }
