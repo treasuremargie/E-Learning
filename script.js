@@ -1,4 +1,4 @@
-const questions = [
+    const questions = [
     {
        question: "Which of the following is a hardware device? ",
        answers: [
@@ -10,7 +10,7 @@ const questions = [
     },
     {
         question:"which symbol is used for comments in python?",
-        answer:[
+        answers:[
             {text:"*", correct:false},
             {text:"&", correct:false},
             {text:"!", correct:false},
@@ -19,7 +19,7 @@ const questions = [
     },
     {
         question:"what will this print:print(2 + 3 * 4)",
-        answer:[
+        answers:[
             {text:"21",correct:false},
             {text:"14", correct:true},
             {text:"13", correct:false},
@@ -28,7 +28,7 @@ const questions = [
     },
     {
         question:"which of the following is part of computer software?",
-        answer:[
+        answers:[
             {text:"monitor", correct:false},
             {text:"keyboard",correct:false},
             {text:"python",correct:true},
@@ -37,7 +37,7 @@ const questions = [
     }
 ];
 const questionElement = document.getElementById("question");
-const  answerButton= document.getElementById("answe-buttons");
+const  answerButton= document.getElementById("answer-buttons");
 const nextButton = document.getElementById("next-btn");
 
 let currentQuestionIndex = 0;
@@ -50,15 +50,39 @@ function startQuiz(){
     showQuestion();
 }
 function showQuestion(){
+    resetState();
     let currentQuestion = question[currentQuestionIndex];
     let questionNo = currentQuestionIndex + 1;
     questionElement.innerHTML = questionNo + "." + currentQuestion.question;
 
-    currentQuestion.answers.array.forEach(element => {
+    currentQuestion.answers.array.forEach(answer => {
         const button = document.createElement("button");
         button.innerHTML = answer.text;
         button.classList.add("btn");
         answerButton.appendChild(button);
+        if(answer.correct){
+            button.dataset.correct = answer.correct;
+        }
+        button.addEventListener("click",selectAnswer);
     });
 }
+
+
+function resetState(){
+nextButton.style.display = "none";
+while(answerButtons.firstChild){
+    answerButtons.removeChild(answerButton.firstChild);
+}
+}
+
+function selectAnswer(e){
+    const selectedBtn = e.target;
+    const isCorrect = selectedBtn.dataset.correct === "true";
+    if (isCorrect){
+        selectedBtn.classList.add("correct");
+    }else{
+        selectedBtn.classList.add("incorrect");
+    }
+}
+
 startQuiz();

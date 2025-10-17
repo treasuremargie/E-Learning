@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family+Lato:100,300,400,700,900");
 *{
     margin: 0;
     padding: 0;
@@ -5,59 +6,60 @@
     box-sizing: border-box;
 }
 body{
-   background :#001e4d; 
+   background :#797e83;
+   font-size: 16px; 
+   font-family: "Lato","Helvetica Neve",sans-serif;
+   line-height: 1.5;
+   margin: 0;
+   padding-top: 2.5em;
+   background-color: #ebff3c;
 }
-.app{
-    background:#fff;
-    width:90% ;
-    max-width: 600px;
-    margin:100px auto 0;
-    border-radius: 10px;
-    padding:30px;
+.container{
+    display: flex;
+    justify-content: center;
 }
-.app h1{
-    font-weight: 25px;
-    color:#001e4d ;
-    font-weight: 600;
-    border-bottom: 1px solid #333;
-    padding-bottom: 30px;
+.centered {
+margin-top: 70px;
+text-align: center;
+width: 800px;
+background-color: rgb(0, 255, 30);
+border-radius:20px;
+box-shadow: 0px 0px 16px 2px rgba(0,0,0,0.62);
 }
-.quiz{
-    padding:20px 0;
+h1{
+    color: #525559;
+    font-weight: 300;
+    font-size: 2.626em;
+    line-height: 1.1;
+    margin-top:30px;
 }
-.quiz h2{
-   font-size: 18px; 
-   color: #001e4d;
-   font-weight: 600;
+h2{
+    color: #999da1;
+    letter-spacing: 1px;
+    font-weight: 300;
+    font-size: 1.5em;
+    font-family: 'Courier New', Courier, monospace;
+    
 }
-.btn{
-    background: #fff;
-    color: #222;
-    font-weight: 500;
-    width: 100%;
-    border:1px solid #222 ;
-    padding: 10px;
-    margin: 10px 0;
-    text-align: left;
-    border-radius: 4px;
-    cursor: pointer;
-    transition:all 0.3s;
+p{
+    margin: 8em 0;
+    font-weight: 300;
+    font-size: 1.125em;
+    line-height: 1.5;
 }
-.btn:hover{
-    background: #222;
-    color:#fff ;
-}
-#next-btn{
-    background: #001e4d;
-    color: #fff;
-    font-weight: 500;
-    width: 150px;
+.btn--default{
+    padding: 10px 20px;
     border: 0;
-    padding: 10px;
-    margin: 20px auto 0;
-    border-radius: 4px;
+    border-radius: 0.5em;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 0.875;
+    font-weight: 400;
+    transition: opacity 0.3;
+    background-color: #ebff3c;
     cursor: pointer;
-    display: block;
-
+}
+.btn--default:hover{
+    opacity:0.75;
 }
 
