@@ -60,6 +60,10 @@ p{
     cursor: pointer;
 }
 .btn--default:hover{
-    opacity:0.75;
+    opacity:initial;
+}
+footer{
+    border-top: 1px solid #fff;
+    margin-top: 1.375em;
 }
 

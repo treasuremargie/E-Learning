@@ -1,88 +1,19 @@
-    const questions = [
-    {
-       question: "Which of the following is a hardware device? ",
-       answers: [
-        { text:"HML", correct:false },
-        {text:"Monitor" , correct:true},
-        {text:"CSS" , correct:false},
-        {text:"nail", correct:false},
-       ]
-    },
-    {
-        question:"which symbol is used for comments in python?",
-        answers:[
-            {text:"*", correct:false},
-            {text:"&", correct:false},
-            {text:"!", correct:false},
-            {text:"#", correct:true},
-        ]
-    },
-    {
-        question:"what will this print:print(2 + 3 * 4)",
-        answers:[
-            {text:"21",correct:false},
-            {text:"14", correct:true},
-            {text:"13", correct:false},
-            {text:"12", correct:false},
-        ]
-    },
-    {
-        question:"which of the following is part of computer software?",
-        answers:[
-            {text:"monitor", correct:false},
-            {text:"keyboard",correct:false},
-            {text:"python",correct:true},
-            {text:"car",correct:false},
-        ]
+function Quiz(questions){
+    this.score = 0;
+    this.questions = questions;
+    this.currentQuestionIndex = 0;
+}
+Quiz.prototype.guess = function(answer){
+    if(this.getCurrentQuestion().isCorrentAnswer(answer)){
+        this.score++;
     }
-];
-const questionElement = document.getElementById("question");
-const  answerButton= document.getElementById("answer-buttons");
-const nextButton = document.getElementById("next-btn");
+    this.currentQuestionIndex++;
+};
 
-let currentQuestionIndex = 0;
-let score = 0;
+Quiz.prototype.getCurrentQuestion = function{}{
+    return this.questions[this.currentQuestionIndex];
+};
 
-function startQuiz(){
-    currentQuestionIndex = 0;
-    score = 0;
-    nextButton.innerHTML = "Next";
-    showQuestion();
+Quiz prototype.hasEnded = function{}{
+return this.currentQuestionIndex
 }
-function showQuestion(){
-    resetState();
-    let currentQuestion = question[currentQuestionIndex];
-    let questionNo = currentQuestionIndex + 1;
-    questionElement.innerHTML = questionNo + "." + currentQuestion.question;
-
-    currentQuestion.answers.array.forEach(answer => {
-        const button = document.createElement("button");
-        button.innerHTML = answer.text;
-        button.classList.add("btn");
-        answerButton.appendChild(button);
-        if(answer.correct){
-            button.dataset.correct = answer.correct;
-        }
-        button.addEventListener("click",selectAnswer);
-    });
-}
-
-
-function resetState(){
-nextButton.style.display = "none";
-while(answerButtons.firstChild){
-    answerButtons.removeChild(answerButton.firstChild);
-}
-}
-
-function selectAnswer(e){
-    const selectedBtn = e.target;
-    const isCorrect = selectedBtn.dataset.correct === "true";
-    if (isCorrect){
-        selectedBtn.classList.add("correct");
-    }else{
-        selectedBtn.classList.add("incorrect");
-    }
-}
-
-startQuiz();
