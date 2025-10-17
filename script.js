@@ -9,7 +9,21 @@ const questions = [
        ]
     },
     {
-        question:"whichvsymbol is used for comments in python?",
-        answer:
+        question:"which symbol is used for comments in python?",
+        answer:[
+            {text:"*", correct:false},
+            {text:"&", correct:false},
+            {text:"!", correct:false},
+            {text:"#", correct:true},
+        ]
+    },
+    {
+        question:"what will this print:print(2 + 3 * 4)"
+        answer:[
+            {text:"21",correct:false},
+            {text:"14", correct:true},
+            {text:"13", correct:false},
+            {text:"12", correct:false},
+        ]
     }
-]
+];
