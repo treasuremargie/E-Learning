@@ -1,18 +1,12 @@
-@import url("https://fonts.googleapis.com/css?family+Lato:100,300,400,700,900");
-*{
-    margin: 0;
-    padding: 0;
-    font-family: 'Poppins',sans-serif;
-    box-sizing: border-box;
-}
+@import url("https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900");
 body{
-   background :#797e83;
+   color:#797e83;
    font-size: 16px; 
-   font-family: "Lato","Helvetica Neve",sans-serif;
+   font-family: "Lato","Helvetica Neue",sans-serif;
    line-height: 1.5;
    margin: 0;
    padding-top: 2.5em;
-   background-color: #ebff3c;
+   background-color: #8c52ff;
 }
 .container{
     display: flex;
@@ -22,7 +16,7 @@ body{
 margin-top: 70px;
 text-align: center;
 width: 800px;
-background-color: rgb(0, 255, 30);
+background-color: #fff;
 border-radius:20px;
 box-shadow: 0px 0px 16px 2px rgba(0,0,0,0.62);
 }
@@ -38,7 +32,7 @@ h2{
     letter-spacing: 1px;
     font-weight: 300;
     font-size: 1.5em;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: "Helvetica Nevue", Helvetica, sans-serif;
     
 }
 p{
@@ -56,14 +50,22 @@ p{
     font-size: 0.875;
     font-weight: 400;
     transition: opacity 0.3;
-    background-color: #ebff3c;
+        background-color: #8C52FF;
+        margin: auto;
     cursor: pointer;
 }
 .btn--default:hover{
-    opacity:initial;
+    opacity:0.75;
 }
+.btn--default:active{
+    opacity: initial;
+    }
 footer{
-    border-top: 1px solid #fff;
+    border-top: 1px solid #ebecec;
+    margin-top: 1.375em;
+}
+footer p{
+    font-size: 1em;
     margin-top: 1.375em;
 }
 
