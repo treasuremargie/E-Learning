@@ -63,6 +63,20 @@ guessHandler: function(id, guess) {
     }
 },
 displayProgress:function(){
-    var currentQuestionNumber = 
+    var currentQuestionNumber = Quiz.currentQuestionIndex + 1 
+    this.populateIdWithHTML("progress","Question" + currentQuestionNumber + "of" + quiz.questions.legth);
 }
-}
+};
+//Create Questions
+var Question = [
+    new Question("which of the following is a computer software?",["monitor" , "monkey", "python", "mars"], "python"),
+    new Question("which of the following is part of computer hardware?", [ "mouse","horse","css","cow"], "mouse"),
+    new Question("which is the output of print(10//3)?",["6","4","5","3"], "3" ) ,
+    new Question("which symbol is used for comments in python" ["*","%","#","@"],"#"),
+    new Question("what will: print(2+3*4)?",["7","14","12","2"],"14"),
+];
+//Create Quiz
+var quiz = new Quiz(questions);
+
+//Display Quiz
+QuizUI.displayNext();
